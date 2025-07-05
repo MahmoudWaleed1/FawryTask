@@ -21,15 +21,16 @@ public class Main {
         }
         else{
             ShippingService.shipItems(cart.getShippableItems());
-            customer.setBalance(customer.getBalance()-cart.getTotalPrices());
+            customer.setBalance(customer.getBalance()-cart.getTotalPrices()-cart.getShippingPrice());
             System.out.println("** Checkout receipt **");
             for (int i = 0; i<cart.getProducts().size(); i++) {
             System.out.printf("%-1s %-10s %8.0f%n",cart.getQuantities().get(i) +"x ",cart.getProducts().get(i).getName(),cart.getProducts().get(i).getPrice());      
         }
             System.out.println("----------------------");
-            System.out.println("Subtotal     "+cart.getTotalPrices());
-            System.out.println("Shipping     "+cart.getShippingPrice());
-            System.out.println("Amount       "+(cart.getTotalPrices()+cart.getShippingPrice())); 
+            System.out.println("Subtotal         "+cart.getTotalPrices());
+            System.out.println("Shipping         "+cart.getShippingPrice());
+            System.out.println("Amount           "+(cart.getTotalPrices()+cart.getShippingPrice())); 
+            System.out.println("Current Balance  "+(customer.getBalance())); 
         }
     }
         public static void main(String[] args) {
