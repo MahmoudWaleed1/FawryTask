@@ -17,7 +17,7 @@ public class Main {
             System.out.println("Invalid Process: Insufficient balance");
         }
         else if(!cart.isAvailable()){
-            System.out.println("Invalid Process: Cart contains products that are expired or out of stock");
+            System.out.println("Invalid Process: Cart contains products that are expired");
         }
         else{
             ShippingService.shipItems(cart.getShippableItems());
@@ -36,7 +36,7 @@ public class Main {
         public static void main(String[] args) {
            Customer customer = new Customer(5000);
            ShippableProduct cheese = new ShippableProduct("cheese",250,1000,false,15,400);
-           ShippableProduct biscuits = new ShippableProduct("biscuits",750,500,false,15,100);
+           ShippableProduct biscuits = new ShippableProduct("biscuits",750,900,false,15,100);
            Product card = new Product("card",950,200,false);
            Cart cart = new Cart();
            cart.add(cheese, 2);

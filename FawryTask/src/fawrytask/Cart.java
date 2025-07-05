@@ -21,7 +21,7 @@ public class Cart {
     }
     public void add(Product product, int quantity){
         if(quantity> product.getQuantity()){
-            System.out.println("Quantity exceeded max");
+            System.out.println("Quantity exceeded max of Product: "+product.getName());
         }
         else{
             products.add(product);
